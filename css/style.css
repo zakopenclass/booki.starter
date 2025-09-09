@@ -1,0 +1,1001 @@
+/*  Styles généraux           */
+/* ========================== */
+html, body {
+  overflow-x: hidden;   /* Empêche le défilement horizontal */
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;               /* Fond blanc */
+  font-family: Arial, sans-serif;          /* Police du site */
+}
+
+.sr-only {
+  position: absolute;                      /* Retire de l’affichage visuel mais reste accessible */
+  width: 1px;                              /* Largeur minimale */
+  height: 1px;                             /* Hauteur minimale */
+  padding: 0;                              /* Pas de padding */
+  margin: -1px;                            /* Décalage pour masquer */
+  overflow: hidden;                        /* Masque le contenu qui déborde */
+  clip: rect(0, 0, 0, 0);                  /* Découpe le contenu */
+  white-space: nowrap;                     /* Pas de retour à la ligne */
+  border: 0;                               /* Pas de bordure */
+} 
+
+header {
+  width: 100%;                             /* Pleine largeur */
+  height: 79px;                            /* Hauteur fixe */
+  padding: 0;                              /* Pas de padding */
+  background-color: #ffffff;               /* Fond blanc */
+}
+
+.main-container {
+  max-width: 1440px;                       /* Largeur maximale */
+  margin: 0 auto;                          /* Centre horizontalement */
+  padding: 0 20px;                         /* Espacement interne horizontal */
+}
+
+.deflex {
+  display: flex;                           /* Active flexbox */
+  align-items: center;                     /* Centre verticalement */
+  justify-content: space-between;          /* Espace égal entre les éléments */
+}
+
+.logo {
+  width: 60px;                             /* Largeur du logo */
+  height: auto;                            /* Hauteur proportionnelle */
+}
+
+.main-title {
+  margin-bottom: 0;                        /* Pas d’espace en bas */
+}
+
+.subtitle {
+  margin-top: 0;                           /* Pas d’espace en haut */
+}
+
+.nav-list {
+  display: flex;                           /* Menu en ligne */
+  list-style: none;                        /* Supprime les puces */
+  margin: 0;                               /* Pas de marge externe */
+  padding: 0 16px;                         /* Espacement interne horizontal */
+  gap: 16px;                               /* Espacement horizontal entre les items */
+}
+
+.nav-link {
+  display: inline-block;                   /* Boîte en ligne */
+  padding: 10px 16px;                      /* Espacement interne */
+  border-top: 2px solid transparent;       /* Ligne supérieure invisible par défaut (desktop/tablette) */
+  text-decoration: none;                   /* Pas de soulignement */
+  color: black;                            /* Texte noir */
+}
+
+.nav-link:hover {
+  color: #0065FC;                          /* Texte bleu au survol (desktop/tablette) */
+  border-top-color: #0065FC;               /* Ligne bleue en haut au survol (desktop/tablette) */
+}
+
+.search-form {
+  display: block;                          /* Affichage bloc */
+  margin-top: 35px;                        /* Espace au-dessus */
+  margin-bottom: 20px;                     /* Espace en dessous */
+  border: 0;                               /* Pas de bordure */
+  height: auto;                            /* Hauteur automatique */
+}
+
+.search-form-inner {
+  display: flex;                           /* Flexbox */
+  align-items: center;                     /* Alignement vertical centré */
+  width: 100%;                             /* Prend toute la largeur dispo */
+  max-width: 420px;                        /* Limite max pour équilibre visuel */
+  height: 52px;                            /* Hauteur fixe */
+  border: 1px solid #ccc;                  /* Bordure grise */
+  border-radius: 14px;                     /* Coins arrondis */
+  overflow: hidden;                        /* Cache débordement */
+}
+
+.location-btn {
+  width: 52px;                             /* Largeur fixe */
+  height: 52px;                            /* Hauteur fixe */
+  display: flex;                           /* Centrage de l’icône */
+  align-items: center;                     /* Centrage vertical */
+  justify-content: center;                 /* Centrage horizontal */
+  background-color: #F2F2F2;               /* Fond gris clair */
+  border: none;                            /* Pas de bordure */
+  border-radius: 14px 0 0 14px;            /* Arrondi gauche */
+  cursor: pointer;                         /* Curseur cliquable */
+  line-height: 0;                          /* Supprime l’espace vertical parasite */
+}
+.location-btn i {
+  font-size: 16px;                         /* Taille de l’icône */
+  color: #000;                             /* Icône noire */
+}
+
+.search-input {
+  flex: 1;                                 /* Prend toute la place disponible */
+  min-width: 0;                            /* Évite le débordement */
+  height: 52px;                            /* Hauteur fixe */
+  padding: 0 14px;                         /* Espacement interne horizontal */
+  border: none;                            /* Pas de bordure */
+  font-size: 16px;                         /* Taille du texte */
+  box-sizing: border-box;                  /* Inclut padding/bordure dans la largeur */
+}
+
+.search-input::placeholder {
+  color: black;                            /* Couleur du placeholder */
+}
+
+.search-btn {
+  height: 52px;                            /* Hauteur fixe */
+  padding: 0 20px;                         /* Espacement interne horizontal */
+  border: none;                            /* Pas de bordure */
+  border-radius: 0 14px 14px 0;            /* Arrondi à droite */
+  background-color: #0065FC;               /* Fond bleu */
+  color: white;                            /* Texte blanc */
+  font-size: 16px;                         /* Taille du texte */
+  font-weight: 700;                        /* Texte en gras */
+  cursor: pointer;                         /* Curseur cliquable */
+}
+
+.main-search-filter {
+  display: flex;                           /* Flexbox */
+  flex-direction: column;                  /* Disposition en colonne */
+  align-items: flex-start;                 /* Alignement à gauche */
+  gap: 16px;                               /* Espacement vertical */
+  margin-top: 20px;                        /* Espace au-dessus */
+}
+
+.info-box {
+  display: flex;                           /* Flexbox */
+  align-items: center;                     /* Alignement vertical */
+  gap: 10px;                               /* Espacement horizontal */
+  font-size: 14px;                         /* Taille du texte */
+}
+
+.info-icon {
+  display: flex;                           /* Centrage interne */
+  align-items: center;                     /* Centrage vertical */
+  justify-content: center;                 /* Centrage horizontal */
+  width: 20px;                             /* Largeur */
+  height: 20px;                            /* Hauteur */
+  border: 1px solid #ccc;                  /* Bordure grise */
+  border-radius: 50%;                      /* Forme ronde */
+  color: #0065FC;                          /* Bleu */
+  font-size: 12px;                         /* Taille du pictogramme */
+}
+
+.filters-title {
+  font-size: 24px;                         /* Taille du titre */
+  font-weight: 700;                        /* Gras */
+  margin: 0 0 12px 0;                      /* Espace en bas */
+}
+
+.filter-buttons .filters-title {
+  flex: 0 0 100%;                          /* Occupe toute la largeur */
+  margin: 0 0 12px 0;                      /* Marge en bas */
+}
+
+.filter-buttons {
+  display: flex;                           /* Flexbox */
+  align-items: center;                     /* Alignement vertical */
+  flex-wrap: wrap;                         /* Retour à la ligne si besoin */
+  gap: 32px;                               /* Espacement */
+}
+
+.filter-btn {
+  display: flex;                           /* Flexbox */
+  align-items: center;                     /* Alignement vertical */
+  gap: 10px;                               /* Espacement entre icône et texte */
+  padding: 10px 16px;                      /* Espacement interne */
+  border: 1px solid #D9D9D9;               /* Bordure grise */
+  border-radius: 25px;                     /* Coins arrondis */
+  background: #fff;                        /* Fond blanc */
+  font-weight: 700;                        /* Texte en gras */
+  cursor: pointer;                         /* Curseur cliquable */
+}
+
+.filter-btn i {
+  margin-right: 8px;                       /* Espace à droite de l’icône */
+  font-size: 16px;                         /* Taille icône */
+  color: #0065FC;                          /* Icône bleue */
+}
+
+.filter-btn:hover {
+  background-color: #66B2FF;               /* Fond bleu clair au survol */
+  color: white;                            /* Texte blanc au survol */
+}
+
+/* =========================================
+   SECTION  hébergement et populaire
+   ========================================= */
+.accommodations-popular {
+  display: flex;                        /* Disposition 2 colonnes en flex */
+  align-items: flex-start;              /* Alignement haut */
+  justify-content: space-between;       /* Espace horizontal entre colonnes */
+  gap: 20px;                            /* Espace entre colonnes */
+}
+
+/* =====================
+   COLONNE accommodations
+   ===================== */
+.accommodations {
+  flex: 2;                              /* 2x plus large que Populaires */
+  padding: 20px;                        /* Espace interne */
+  border-radius: 20px;                  /* Coins arrondis */
+  background-color: #f2f2f2;            /* Fond gris clair */
+  box-sizing: border-box;               /* Inclut padding dans la largeur/hauteur */
+}
+
+.accommodations-title {
+  margin: 0 0 20px 0;                   /* Marge seulement en bas */
+}
+
+/* 3 colonnes via Flex */
+.accommodations-cards {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;                 /* Hauteurs homogènes */
+  gap: 32px;                            /* Espace entre cartes */
+  margin: 0;                            /* Pas de marge externe */
+  padding: 0;                           /* Pas de padding interne */
+}
+
+/* Carte d’hébergement (verticale) */
+.accommodations-cards article {
+  flex: 0 0 calc((100% - 2*32px) / 3); /* 3 colonnes avec gap:32px */
+  display: flex;                        /* Disposition interne */
+  flex-direction: column;               /* Colonne (image > texte) */
+  align-items: flex-start;              /* Texte aligné à gauche */
+  gap: 12px;                            /* Espace image/texte */
+  height: 100%;                         /* Occupe toute la cellule */
+  margin: 0;                            /* Pas de marge externe */
+  padding-bottom: 8px;                  /* Espace sous le contenu */
+  border: 5px solid #fff;               /* Bordure blanche (séparation) */
+  border-radius: 20px;                  /* Coins arrondis */
+  background: #fff;                     /* Fond blanc */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Ombre légère */
+  overflow: hidden;                     /* Masque les débords (images arrondies) */
+  cursor: pointer;                      /* Curseur main */
+  transition: transform .3s ease;       /* Zoom fluide */
+  box-sizing: border-box;               /* Inclut bordure/padding dans la largeur */
+}
+
+.accommodations-cards article:hover {
+  transform: scale(1.05);               /* Zoom léger au survol */
+}
+
+/* Image des cartes Hébergements */
+.accommodations-cards img {
+  width: 100%;                          /* Pleine largeur */
+  height: 150px;                        /* Hauteur fixe */
+  display: block;                       /* Supprime l’espace fantôme */
+  object-fit: cover;                    /* Recadre sans déformer */
+  border-top-left-radius: 20px;         /* Coins arrondis en haut */
+  border-top-right-radius: 20px;
+}
+
+/* =========================
+   COLONNE LES POPULAIRES
+   ========================= */
+.popular {
+  flex: 1;                              /* Colonne plus petite */
+  padding: 20px;                        /* Espace interne */
+  border-radius: 20px;                  /* Coins arrondis */
+  background-color: #f2f2f2;            /* Fond gris clair */
+  box-sizing: border-box;               /* Respect des tailles */
+  align-self: stretch;                  /* Hauteur calée sur Hébergements */
+}
+
+/* En-tête (titre + icône) */
+.popular-top {
+  display: flex;                        /* Disposition en ligne */
+  align-items: center;                  /* Centré verticalement */
+  justify-content: space-between;       /* Titre à gauche, icône à droite */
+  margin-bottom: 20px;                  /* Espace sous l’en-tête */ 
+  padding-left: 10px;        
+  padding-right: 10px;       
+}
+
+/* Liste de cartes populaires */
+.popular-cards {
+  display: flex;                        /* Disposition en colonne */
+  flex-direction: column;
+  gap: 20px;                            /* Espace entre cartes */
+}
+
+/* Carte populaire (horizontale) */
+.popular-cards .card {
+  display: flex;                        /* Flexbox */
+  flex-direction: row;                  /* Image à gauche, contenu à droite */
+  align-items: stretch;                 /* Même hauteur image + contenu */
+  height: 150px;                        /* Hauteur fixe */
+  min-height: 150px;                    /* Hauteur minimale uniforme */
+  border: 5px solid #fff;               /* Bordure blanche (séparateur) */
+  border-radius: 20px;                  /* Coins arrondis */
+  background: #fff;                     /* Fond blanc */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Ombre douce */
+  overflow: hidden;                     /* Masque les débords */
+  cursor: pointer;                      /* Main au survol */
+  transition: transform .3s ease;       /* Zoom fluide */
+}
+
+.popular-cards .card:hover {
+  transform: scale(1.02);               /* Zoom léger */
+}
+
+/* Image des cartes Populaires */
+.popular-cards .card > img {
+  flex-shrink: 0;                       /* L’image ne rétrécit pas */
+  width: 40%;                           /* Image = 40% de la carte */
+  height: 100%;                         /* Pleine hauteur de la carte */
+  object-fit: cover;                    /* Recadre sans déformer */
+  border-radius: 20px 0 0 20px;         /* Arrondi côté gauche */
+}
+
+.popular-cards img {
+  height: 100%;                         /* L’image remplit la carte en hauteur */
+}
+
+/* Contenu à droite des cartes Populaires */
+.popular-cards .card-content {
+  display: flex;                        /* Flexbox */
+  flex-direction: column;               /* Empile titre/prix/étoiles */
+  justify-content: space-between;       /* Espace entre haut et bas */
+  padding: 12px;                        /* Espace interne */
+  min-width: 0;                         /* Évite le débordement du texte */
+}
+
+.popular-cards .card-txt {
+  display: flex;                        /* Conteneur texte */
+  flex-direction: column;               /* Titre au-dessus du prix */
+  gap: 4px;                             /* Espace entre titre et prix */
+}
+
+.popular-cards a { 
+  text-decoration: none;                /* Pas de soulignement sur la carte */
+  color: inherit;                       /* Hérite la couleur du texte */
+}
+
+/* --------------------
+   CONTENU DES CARTES (générique)
+   -------------------- */
+.card-title {
+  font-size: 16px;                      /* Taille du titre */
+  font-weight: bold;                    /* Gras */
+  margin: 0 0 5px 0;                    /* Espace en bas */
+}
+
+.card-subtitle {
+  font-size: 14px;                      /* Taille du sous-texte */
+  color: #555;                          /* Gris foncé */
+  margin: 0 0 5px 0;                    /* Espace en bas */
+}
+
+.card-rating {
+  color: #0065FC;                       /* Étoiles bleues */
+  font-size: 14px;                      /* Taille adaptée */
+}
+
+/* --------------------
+   ÉLÉMENTS DIVERS
+   -------------------- */
+.popular-top .fa-chart-line { 
+  color: #0065FC;                       /* Icône bleue */
+} 
+.star i { 
+  color: #0065FC;                       /* Icônes étoiles bleues */
+}
+.euro {
+  color: #000;                          /* Noir */
+  font-weight: 700;                     /* Symbole € en gras */
+}
+
+.see-more {
+  display: inline-block;                /* Lien en bloc */
+  margin-top: 40px;                     /* (sera redéfini en mobile) */
+  font-size: 20px;                      /* Texte plus grand */
+  font-weight: 600;                     /* Semi-gras */
+  color: #000;                          /* Noir */
+  text-decoration: none;                /* Pas de soulignement */
+}
+
+/* =========================================
+   SECTION activités Marseille
+   ========================================= */
+.activities {                              /* Section globale Activités */    
+  margin-top: 40px;                        /* Espace au-dessus */
+  padding: 20px;                           /* Espace interne */
+  border-radius: 20px;                     /* Coins arrondis */
+  background-color: #fff;                  /* Fond blanc */
+  box-sizing: border-box;                  /* Inclut padding/bordure dans la largeur */
+}
+
+.activities-card {                         /* Grille des cartes d’activités (layout en Flex) */
+  display: flex;                           /* Flex avec 4 colonnes via flex-basis */
+  flex-wrap: wrap;
+  align-items: stretch;                    /* Hauteurs homogènes */
+  gap: 30px;                               /* Espace horizontal et vertical */
+  margin-top: 30px;                        /* Espace au-dessus de la grille */
+}
+
+.activities-card .card {                   /* Carte d’activité individuelle */
+  flex: 0 0 calc((100% - 3*30px) / 4);     /* 4 colonnes avec gap:30px */
+  box-sizing: border-box;                  /* Safe si padding/bordure horizontaux */
+  height: 100%;                            /* Occupe toute la cellule */
+  margin: 0;                               /* Pas de marge externe */
+  padding-bottom: 10px;                    /* Espace en bas du texte */
+  border-radius: 20px;                     /* Coins arrondis */
+  background: #fff;                        /* Fond blanc */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);  /* Ombre douce */
+  overflow: hidden;                        /* Masque les débords */
+  cursor: pointer;                         /* Curseur main */
+  transition: transform .3s ease;          /* Zoom fluide */
+  text-align: center;                      /* Titre centré */
+  font-size: 16px;                         /* Taille titre */
+  font-weight: bold;                       /* Titre en gras */
+}
+.activities-card img {
+  width: 100%;                             /* Pleine largeur */
+  height: 400px;                           /* Hauteur uniforme des images */
+  display: block;                          /* Bloque les espaces fantômes */
+  object-fit: cover;                       /* Recadre sans déformer */
+  border-radius: 20px 20px 0 0;            /* Arrondi en haut */
+}
+.activities-card .card-title {
+  margin-top: 10px;                        /* Espace entre l’image et le titre */
+  text-align: center;                      /* Titre centré */
+}
+
+/* =========================
+   COLONNE footer
+   ========================= */
+.footer-nav{
+  display:flex;                            /* Colonnes du footer en flex */
+  justify-content: flex-start;             /* Alignement à gauche */
+  gap: 300px;                              /* Grand espacement entre colonnes */
+  padding: 20px;                           /* Espace interne */
+  background-color: #f2f2f2;               /* Fond gris clair */
+  box-sizing: border-box;                  /* Inclut padding/bordure */
+  margin-top: 40px;                        /* Espace au-dessus du footer */
+}
+.footer-liste {
+  list-style: none;                        /* Pas de puces */
+  padding: 0;                              /* Pas de padding par défaut */
+}
+.footer-liste a {
+  text-decoration: none;                   /* Pas de soulignement */
+  color: #000;                             /* Liens en noir */
+  font-size: 14px;                         /* Taille du texte des liens */
+}
+.footer-liste li {
+  margin-bottom: 8px;                      /* Espace sous chaque lien */
+}
+.our-activities {
+  margin-left: 80px;                       /* Décale la colonne “Assistance” vers la droite */
+}
+
+
+/* ========================================= */
+/*  TABLETTES GRANDES & PETITS DESKTOPS      */
+/*  Styles appliqués quand l'écran ≤ 1024px  */
+/* ========================================= */
+@media (max-width: 1024px) {
+
+  .main-container {
+    padding: 0 16px;             /* Réduit les marges internes */
+  }
+
+  header {
+    height: auto;                /* Hauteur automatique */
+  }
+
+  .nav-list {
+    display: flex;               /* Réaffirmé pour contexte */
+    margin:  0;                  /* Supprime la marge verticale */
+    padding: 0;                  /* Supprime le padding horizontal */
+    gap: 12px;                   /* Réduit l’espacement horizontal */
+  }
+
+  .nav-link {
+    padding: 10px 12px;          /* Réduit le padding interne */
+  }
+
+  .search-form {
+    width: 100%;                 /* Prend toute la largeur */
+  }
+
+  .search-form-inner {
+    width: 100%;                 /* S’étend sur toute la largeur */
+  }
+
+  .main-search-filter {
+    align-items: stretch;        /* Les éléments s’étirent en hauteur */
+  }
+
+  .filter-buttons {
+    display: flex;               /* Une seule ligne si possible */
+    align-items: center;         /* Alignement vertical */
+    flex-wrap: wrap;             /* Retour à la ligne si besoin */
+    gap: 16px;                   /* Espace entre les boutons */
+  }
+  .filters-title{
+    flex: 0 0 100%;              /* Le titre occupe toute la ligne */
+  }
+
+  .filter-btn {
+    flex: 0 0 auto;              /* Taille naturelle des boutons */
+  }
+  .accommodations-popular { 
+    display: flex;               /* Conserve le flex */
+    flex-direction: column;      /* Populaires sous Hébergements */
+    justify-content: initial;    /* Réinitialise l’alignement horizontal */
+    align-items: stretch;        /* Blocs pleine largeur */
+    gap: 32px;                   /* Espace vertical entre blocs */
+  }
+
+  .popular-cards { 
+    display: flex;                                  /* Conteneur Flex en lignes (3 colonnes) */
+    flex-wrap: wrap;                                /* 3 cartes alignées */
+    gap: 30px;                                      /* Espace entre cartes */                                             
+    padding:8px 0;                                  /* Espace haut/bas */
+    flex-direction: row;                            /* Sort du mode colonne */
+  }
+
+  .popular-cards > a { 
+    flex: 0 0 calc((100% - 2*30px) / 3); /* 3 colonnes (gap = 30px) */
+    box-sizing: border-box;              /* Inclut bordures/padding */
+    display: block;                      /* Chaque lien occupe sa cellule */
+    scroll-snap-align:start;             /* Alignement fluide au scroll */
+  }
+
+  .popular-cards .card { 
+    width:100%;                          /* Sans effet : flex-basis prime */
+    flex: 0 0 calc((100% - 2*30px) / 3); /* 3 colonnes (gap=30px) */
+    box-sizing: border-box;              /* Inclut bordures/padding */
+  }
+  .footer-nav {
+    display:flex;                 /* Footer en flex */
+    justify-content: flex-start;  /* Alignement à gauche */
+    gap: 80px;                    /* Espacement réduit entre colonnes */
+    padding: 20px;                /* Espace interne */
+    background-color: #f2f2f2;    /* Fond gris clair */
+  }
+  .search-btn i {
+    display: none;                /* Cache la loupe */
+  }
+}
+
+
+
+/* ========================================= */
+/*  TABLETTES (et mobiles larges) ≤ 768px    */
+/*  Styles appliqués quand l'écran ≤ 768px   */
+/* ========================================= */
+@media (max-width: 768px) {
+
+  .main-container {
+    padding: 0 12px;             /* Réduit les marges internes */
+  }
+
+  .logo {
+    width: 50px;                 /* Logo plus petit */
+    height: auto;                /* Proportionnel */
+  }
+
+  .main-search-filter {
+    align-items: stretch;        /* Les éléments s’étirent */
+    padding: 0;                  /* Supprime le padding */
+    box-sizing: border-box;      /* Inclut padding/border */
+  }
+  
+
+  .search-form-inner {
+    display: flex;
+    align-items: center;         /* Alignement vertical */
+    width: 100%;                 /* Largeur pleine */
+    height: 52px;                /* Hauteur fixe */
+    border: 1px solid #ccc;      /* Bordure grise */
+    border-radius: 14px;         /* Coins arrondis */
+    overflow: hidden;            /* Cache débordement */
+    gap: 0;                      /* Pas d’espace entre colonnes */
+  }
+
+  .search-form {
+    margin-top: 16px;            /* Espace au-dessus */
+  }
+
+  .main-title {
+    font-size: 20px;             /* Titre plus petit */
+  }
+
+  .subtitle {
+    font-size: 14px;             /* Sous-titre plus petit */
+  }
+
+  .filters-title {
+    font-size: 18px;             /* Titre des filtres réduit */
+    margin: 0 0 8px 0;           /* Moins d’espace en bas */
+    grid-column:1 / -1;          /* Le titre prend toute la ligne */
+    flex: 0 0 100%;              /* Occupe toute la largeur en Flex */
+  }
+  
+  .location-btn {
+    grid-column: 1;              /* Colonne 1 (icône) */
+    width: 52px;                 /* Largeur fixe */
+    height: 52px;                /* Hauteur fixe */
+    margin: 0;                   /* Pas de marge */
+    display: flex;               /* Flexbox */
+    align-items: center;         /* Centrage vertical */
+    justify-content: center;     /* Centrage horizontal */
+    border: none;                /* Pas de bordure */
+    border-radius: 0;            /* Pas d’arrondi */
+  }
+  
+
+  .search-input {
+    grid-column: 2;              /* Colonne 2 (champ) */
+    height: 52px;                /* Hauteur fixe */
+    padding: 0 12px;             /* Padding horizontal */
+    border: none;                /* Pas de bordure */
+    font-size: 16px;             /* Taille du texte */
+    min-width: 0;                /* Largeur minimale */
+  }
+
+  .search-btn {
+    grid-column: 3;              /* Colonne 3 (bouton) */
+    width: 52px;                 /* Largeur fixe */
+    margin: 0;                   /* Pas de marge */
+    padding: 0;                  /* Pas de padding */
+    display: flex;               /* Flexbox */
+    align-items: center;         /* Alignement vertical */
+    justify-content: center;     /* Alignement horizontal */
+    background: #0065FC;         /* Fond bleu */
+    font-size:0;                 /* Masque le texte visuellement */
+  }
+  .search-btn i{
+    display: inline-block;       /* Affiche l’icône loupe */
+    font-size: 18px;             /* Taille de l’icône */
+    line-height: 1;              /* Hauteur de ligne compacte */
+  }
+ 
+  .filter-buttons {
+    display: flex;               /* Conteneur flex avec wrap */
+    flex-wrap: wrap;
+    width: 100%;                 /* Pleine largeur */
+    gap: 12px;                   /* Espacement entre colonnes */
+    padding: 0 8px;              /* Espacement horizontal */
+    box-sizing: border-box;      /* Respect des tailles */
+    margin: 0;                   /* Supprime les marges externes */
+  }
+
+  .filter-btn {
+    display: flex;               /* activer Flexbox */
+    align-items: center;         /* Alignement vertical */
+    width: 100%;                 /* Largeur pleine */
+    justify-content: flex-start; /* Alignement du contenu à gauche */
+    padding: 10px 16px;          /* Espacement interne */
+    border-radius: 25px;         /* Coins arrondis */
+    border: 1px solid #D9D9D9;   /* Bordure grise */
+    background: #fff;            /* Fond blanc */
+    flex: 0 0 calc((100% - 12px) / 2); /* 2 colonnes (gap = 12px) */
+    box-sizing: border-box;             /* inclut padding/bordure */
+  }
+
+  header > .deflex {
+    display: flex;               /* Contexte */
+    flex-direction: column;      /* Navigation en colonne */
+    align-items: center;         /* Centrée */
+    padding: 10px 0;             /* Espacement vertical */
+  }
+
+  .nav-list.deflex {
+    display: flex;               /* Menu en ligne */
+    justify-content: center;     /* Centrage horizontal */
+    width: 100%;                 /* Pleine largeur */
+    flex-direction: row;         /* Ligne */
+    gap: 80px;                   /* Grand espace entre items */
+  }
+
+  .nav-list {
+    display: flex;               /* Menu flexbox */
+    flex-wrap: nowrap;           /* Pas de retour à la ligne */
+    width: 100%;                 /* Pleine largeur */
+    margin: 8px 0 0;             /* Petit espace au-dessus */
+    padding: 0;                  /* Pas de padding */
+    gap: 0;                      /* Pas d’espacement interne */
+  }
+
+  .nav-list li {
+    flex: 1;                     /* Chaque item prend la même largeur */
+    text-align: center;          /* Texte centré */
+  }
+
+  .nav-link {
+    display: block;              /* Lien en bloc */
+    border-top: none;            /* Pas de bordure en haut */
+    border-bottom: 2px solid transparent; /* Bordure invisible en bas */
+  }
+
+  .nav-link:hover {
+    color:#0065FC;                /* Texte bleu au survol */
+    border-top-color: transparent;/* Annule la bordure haute de la règle globale */
+    border-bottom-color: #0065FC; /* Bordure bleue en bas au survol (≤768px) */
+  }
+ 
+}
+
+/* ========================================= */
+/*  MOBILES PETITS (smartphones ≤ 480px)     */
+/*  Styles appliqués quand l'écran ≤ 480px   */
+/* ========================================= */
+@media (max-width: 480px) {
+
+  .nav-list li{
+    flex: 1 0 50%;              /* Chaque onglet prend exactement 50% */
+    text-align: center;         /* Texte centré */
+  }
+
+  /* --- HEADER : ligne grise sous la nav --- */
+  header{
+    border-bottom: 1px solid #D9D9D9; /* Ligne grise sous la navigation */
+  }
+
+  /* --- HEADER : coller la nav à la ligne --- */
+  header > .deflex{
+    padding-bottom:0;           /* Écrase le padding-bottom:10px défini en ≤768px */
+  }
+
+  /* --- NAV : reset marges/paddings du <ul> --- */
+  .nav-list{
+    margin:0;                   /* Pas de marge supplémentaire */
+    padding:0;                  /* Pas de padding interne */
+  
+  }
+
+  .nav-list.deflex{
+    gap:120px;                  /* Écart de 100px entre les deux onglets */
+    width: 100%;
+  }
+  
+  .nav-link:hover{
+    color:#0065FC;                   /* Texte bleu au survol (mobile) */
+    border-top-color: transparent;   /* Pas de bordure haute au survol (mobile) */
+    border-bottom-color:#0065FC;     /* Soulignement en bas au survol (mobile) */
+  }
+
+  /* --- Liens : style mobile + base du soulignement en bas --- */
+  .nav-link{
+    display:block;               /* Le lien remplit toute sa moitié */
+    width:100%;                  /* S’étire sur 100% du conteneur */
+    padding:16px 0;              /* Hauteur tactile confortable */
+    border-top:none;             /* Enlève le trait haut (desktop) */
+    border-bottom:2px solid transparent; /* Base du soulignement en bas (mobile) */
+  }
+
+  /* --- Titre principal : césure plus équilibrée --- */
+  .main-title{
+    text-wrap: balance;          /* Répartit mieux les mots sur 2 lignes */
+  }
+
+  .main-container {
+    padding: 0px;                /* Réduit encore les marges */
+    box-sizing: border-box;      /* Respect des tailles */
+  }
+
+  .main-search-filter {
+    padding: 0 8px;              /* Moins d’espace interne */
+    box-sizing: border-box;      /* Respect des tailles */
+  }
+
+  .logo {
+    width: 50px;                 /* Logo réduit */
+    height: auto;                /* Hauteur proportionnelle */
+  }
+
+  .search-form-inner {
+    display: flex;               /* Utilise flexbox */
+    align-items: stretch;        /* Étire verticalement */
+    width: 100%;                 /* Pleine largeur */
+    border: 1px solid #ccc;      /* Bordure grise */
+    border-radius: 14px;         /* Coins arrondis */
+    overflow: hidden;            /* Cache débordement */
+    box-sizing: border-box;      /* Respect des tailles */
+  }
+
+  .location-btn {
+    width: 52px;                 /* Taille fixe */
+    height: 52px;                /* Taille fixe */
+    display: flex;               /* Flexbox */
+    align-items: center;         /* Centré verticalement */
+    justify-content: center;     /* Centré horizontalement */
+    border: none;                /* Pas de bordure */
+    border-radius: 0;            /* Pas d’arrondi */
+  }
+
+  .search-input {
+    width: 100%;                 /* Largeur totale */
+    height: 52px;                /* Hauteur fixe */
+    padding: 0 10px;             /* Espacement horizontal */
+    border: none;                /* Pas de bordure */
+    border-radius: 0;            /* Pas d’arrondi */
+  }
+
+  .search-btn {
+    display: flex;               /* Flexbox */
+    align-items: center;         /* Centré verticalement */
+    justify-content: center;     /* Centré horizontalement */
+    height: 52px;                /* Taille fixe */
+    padding: 0 12px;             /* Espacement interne */
+    background: #0065FC;         /* Fond bleu */
+    color: #fff;                 /* Texte blanc */
+    border: none;                /* Pas de bordure */
+    font-weight: 600;            /* Texte en gras */
+    font-size: 0px;              /* Masque visuellement le texte */
+    white-space: nowrap;         /* Pas de retour à la ligne */
+    border-radius: 0;            /* Pas d’arrondi */
+  }
+
+  .filter-buttons {
+    display: flex;               /* Conteneur flex */
+    flex-wrap: wrap;
+    align-items: stretch;        /* Étire verticalement */
+    gap: 12px;                   /* Espacement */
+  }
+  .filters-title {
+    grid-column: 1 / -1;         /* (Sans effet en Flex, conservé) */
+    font-size: 18px;             /* Taille réduite */
+    margin: 0 0 8px 0;           /* Moins d’espace en bas */
+    flex: 0 0 100%;              /* Occupe toute la ligne en Flex */
+  }
+
+  .filter-btn {
+    display: flex;               /* Flexbox */
+    align-items: center;         /* Alignement vertical */
+    justify-content: flex-start; /* Alignement gauche */
+    width: 100%;                 /* Largeur totale */
+    padding: 10px 16px;          /* Espacement interne */
+    border-radius: 25px;         /* Coins arrondis */
+    border: 1px solid #D9D9D9;   /* Bordure grise */
+    background: #fff;            /* Fond blanc */
+    font-weight: 700;            /* Texte gras */
+    cursor: pointer;             /* Curseur cliquable */
+    flex: 0 0 calc((100% - 12px) / 2); /* 2 colonnes (gap = 12px) */
+    box-sizing: border-box;             /* Sécurité padding/bordure */
+  }
+
+  .accommodations {
+    background: none;            /* Supprime le fond du bloc */
+    padding:12px;                /* Espace interne */
+  }
+  
+  .popular { 
+    order: -1;                   /* Populaires au-dessus d’Hébergements */
+    border-radius: 0px;          /* Coins non arrondis en mobile pour ce bloc */
+    padding-left: 0;             /* Retire padding gauche */
+    padding-right: 0;            /* Retire padding droit */
+   
+  }
+
+  /* Hébergements : 1 colonne */
+  .accommodations-cards{
+    grid-template-columns: 1fr;  /* (Sans effet en Flex ; conservé pour compatibilité) */
+    gap: 12px;                   /* Espace entre cartes */
+    row-gap: normal;               /* Espace vertical augmenté */
+  }
+  .accommodations-cards img {
+    height: 140px;               /* Hauteur fixe des images */
+  }
+  .accommodations-cards article {
+    flex: 0 0 100%;              /* Une carte = toute la ligne en mobile */
+    margin-bottom: 24px;         /* Espace visible entre cartes */
+    border: none;                /* Supprime la bordure blanche collante */
+    padding: 8px;                /* Respiration interne */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* Ombre discrète et compacte */
+  }
+
+  /* Populaires : 1 colonne (doublons fusionnés) */
+  .popular-cards {
+    grid-template-columns: 1fr;  /* (Sans effet en Flex) */
+    gap: 12px;                   /* Espace entre cartes */
+    padding: 0 16px;             /* Espace latéral interne des cards */
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+  .popular-cards > a {
+    display: block;              /* Le lien occupe 100% de la largeur */
+    width: 100%;
+    flex: 0 0 100%;              /* Une carte = toute la ligne */
+    box-sizing: border-box;
+  }
+  .popular-cards .card {
+    height: 120px;
+    min-height: 120px;
+    width: 100%;
+    flex: 0 0 100%;              /* Une carte = toute la ligne */
+    box-sizing: border-box;
+    border: none;                /* Supprime la grosse bordure blanche */
+  }
+  .popular-cards .card > img {
+    width: 40%;                  /* Image ≈ 40% de la carte */
+  }
+
+  .see-more {
+    display: block;              /* Le lien prend toute la largeur */
+    text-align: left;            /* Texte aligné à gauche  */
+    font-size: 24px;             /* Taille du texte */
+    font-weight: 600;            /* Semi-gras */
+    margin-top: 30px;            /* Espace au-dessus (valeur finale) */
+  }
+
+  /* Activités : 1 colonne */
+  .activities {
+    padding: 16px 8px;           /* Padding réduit */
+    border-radius: 12px;         /* Coins légèrement arrondis */
+  } 
+  .activities-card {
+    gap: 24px;                   /* Espacement identique visuellement en Flex */
+    height: auto;                /* Hauteur auto selon le contenu */
+  }
+  .activities-card .card {
+    flex: 0 0 100%;              /* Une carte = toute la ligne */
+    box-sizing: border-box;      /* Sécurité si bordures/padding */
+  }
+  .activities-card img {
+    height: 200px;               /* Hauteur d’image réduite pour mobile */
+  }
+  .activities-card .card-title {
+    font-size: 18px;             /* Titre réduit en mobile */
+    text-align: left;            /* Titre aligné à gauche */
+    padding-left:14px;           /* Espace gauche du titre */
+  }
+
+  .footer {
+    padding: 20px 16px;          /* Espace haut/bas et côtés */
+    box-sizing: border-box;      /* Respect des tailles */
+    width: 100%;                 /* Pleine largeur */
+    margin-left: -8px;           /* Aligne avec le container */
+  }
+  .footer-nav {
+    flex-direction: column;      /* Empile les colonnes du footer */
+    align-items: flex-start;     /* Contenu aligné à gauche */
+    gap: 24px;                   /* Espace entre sections */
+    font-size: 18px;             /* Taille de texte du footer */
+    padding: 0 40px;             /* Espace latéral interne */
+    box-sizing: border-box;      /* Respect des tailles */
+  }
+  .our-activities {
+    margin-left: 0;              /* Supprime le décalage en mobile */
+  }
+  .footer-liste a {
+    font-size: 16px;             /* Légère augmentation de taille */
+  }
+  .main-container footer {
+    margin-left: -20px;          /* Enlève la marge gauche du container */
+    margin-right: -20px;         /* Enlève la marge droite du container */
+    width: calc(100% + 40px);    /* Pleine largeur */
+  }
+}
+
+
+
+/* ========================================= */
+/*  TABLETTES & PLUS GRAND (≥ 768px)         */
+/*  Styles appliqués quand l'écran ≥ 768px   */
+/* ========================================= */
+@media (min-width: 768px) {
+
+  .search-btn .sr-only { 
+    position: static;            /* Rétablit la position normale */
+    width: auto;                 /* Largeur auto */
+    height: auto;                /* Hauteur auto */
+    padding: 0;                  /* Pas de padding */
+    margin: 0;                   /* Pas de marge */
+    overflow: visible;           /* Contenu visible */
+    clip: auto;                  /* Pas de découpe */
+    white-space: normal;         /* Retours à la ligne autorisés */
+  }
+}
+@media (min-width:1025px){
+  .search-btn i{ display:none; } /* Cache la loupe en desktop */
+}
